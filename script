@@ -10,14 +10,15 @@ from pywinauto.mouse import click as left_click
 pyautogui.PAUSE = 0
 is_up = True
 print("press 's' to start")
-print("press 'q' to quit")
+print("then press 'q' to quit")
 keyboard.wait('s')
+print('started')
 sct = mss.mss()
 break_message = cv2.imread('broken message.png')
 w = break_message.shape[1]
 h = break_message.shape[0]
 
-
+cars_fixed = 0
 
 def click(x, y):
     left_click(button='left', coords=(x, y))
@@ -31,8 +32,8 @@ while True:
     if max_val >= .85:
         x = max_loc[0] + w // 2
         y = max_loc[1] + h - h // 4
-        
         click(x, y)
+        cars_fixed += 1
     sleep(1)
     if is_up:
         pyautogui.scroll(-1600)
@@ -46,6 +47,7 @@ while True:
         is_up = True
     sleep(3)
     if keyboard.is_pressed('q'):
+        print("cars fixed:", cars_fixed)
         break
 
 
