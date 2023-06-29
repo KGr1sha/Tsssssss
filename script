@@ -39,11 +39,15 @@ while True:
         pyautogui.scroll(-1600)
         sleep(0.2)
         pyautogui.scroll(-1600)
+        sleep(0.2)
+        pyautogui.scroll(-1600)
         is_up = False
     else:
         pyautogui.scroll(1600)
         sleep(0.2)
         pyautogui.scroll(1600)
+        sleep(0.2)
+        pyautogui.scroll(-1600)
         is_up = True
     sleep(3)
     if keyboard.is_pressed('q'):
