@@ -29,7 +29,7 @@ def click(x, y):
 
 while True:
     screen = pyautogui.screenshot('sh.png')
-    screen = cv2.imread('sh.png')s
+    screen = cv2.imread('sh.png')
     result = cv2.matchTemplate(screen, break_message, cv2.TM_CCOEFF_NORMED)
     _, max_val, _, max_loc = cv2.minMaxLoc(result)
     if max_val >= .85:
