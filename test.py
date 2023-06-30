@@ -1,8 +1,14 @@
 import cv2
+import pyautogui
+from time import sleep
 
 
-screen = cv2.imread('Screenshot 2023-06-29 125822.png')
-button = cv2.imread('broken message.png')
-result = cv2.matchTemplate(screen, button, cv2.TM_CCOEFF_NORMED)
-cv2.imshow('r', result)
+
+sleep(5)
+s = pyautogui.screenshot('test_sh.png')
+s = cv2.imread('test_sh.png')
+cv2.imshow('s', s)
 cv2.waitKey()
+
+
+
